@@ -10,7 +10,9 @@ describe "user visits new director page" do
       fill_in "director[name]", with: "Steven Spielberg"
       click_on "Create Director"
 
-      expect(current_path).to eq("/directors/#{Director.last.id}") 
+      latest_director = Director.last
+      expect(current_path).to eq("/directors/#{latest_director.id}")
+      expect(page).to have_content("#{latest_director.name}")
     end
   end
 
