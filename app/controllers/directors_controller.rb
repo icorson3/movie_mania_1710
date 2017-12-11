@@ -14,6 +14,10 @@ class DirectorsController < ApplicationController
     end
   end
 
+  def show
+    @director = Director.find(params[:id])
+  end
+
   private
 
     def director_params
