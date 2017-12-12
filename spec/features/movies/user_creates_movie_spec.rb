@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "user creates a new movie for a director" do
   it "creats a new movie associated with a movie" do
-    director = Director.create(name: "Me")
+    director = create(:director)
 
     visit "/directors/#{director.id}/movies/new"
 
