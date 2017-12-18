@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   # get '/movies', to: 'movies#index'
 
   root "welcome#index"
-
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  
   resources :directors, shallow: true do
     resources :movies
   end

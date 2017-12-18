@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-    @user = User.find(params[:id])
+
   end
 
   def new
@@ -16,6 +16,10 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    
   end
 
   private
