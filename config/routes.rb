@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   end
 
   resources :movies, only: [:index]
-  resources :users, only: [:new]
+  resources :users, only: [:show, :new, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
