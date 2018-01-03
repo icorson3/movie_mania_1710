@@ -4,5 +4,6 @@
   <% @movies.each do |movie| %>
     <h2><%= movie.title %></h2>
     <p><%= movie.description %></p>
+    <%= button_to "Add Movie", carts_path(movie_id: movie.id) %>
   <% end %>
 </div>
