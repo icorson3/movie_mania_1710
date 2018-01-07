@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = Movie.find(params[:id])
+    @movie = Movie.find_by(slug: params[:id])
   end
 
   def new
@@ -17,7 +17,7 @@ class MoviesController < ApplicationController
     movie = director.movies.new(movie_params)
 
     if movie.save
-      redirect_to "/movies/#{movie.id}"
+      redirect_to "/movies/#{movie.slug}"
     else
       render :new
     end
