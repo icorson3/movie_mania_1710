@@ -1,0 +1,16 @@
+
+$wow-border: 3px dotted $wow-green;
+
+
+.movie-index {
+  h1 {
+    color: $mellow-green;
+  }
+  h2 {
+    color: $forest-green;
+    border: $wow-border;
+  }
+  p {
+    border: $wow-border;
+  }
+}

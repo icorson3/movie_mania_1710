@@ -1,0 +1,9 @@
+.cart-button {
+  background-color: $mellow-green;
+  font: {
+    family: $font-default;
+  }
+  &:hover {
+    background: darken($mellow-green, 8%); 
+  }
+}

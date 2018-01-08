@@ -1,0 +1,21 @@
+h1 {
+  font: {
+    family: $font-default;
+    size: 50px;
+  }
+  color: $ice-blue;
+}
+
+h2 {
+  text: {
+    align: center;
+    decoration: underline;
+  }
+}
+
+p {
+  font: {
+    family: papyrus;
+    size: 15px;
+  }
+}
