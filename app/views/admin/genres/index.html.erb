@@ -8,7 +8,7 @@
 
 <h3>Create A New Genre:</h3>
 
-<%= form_for [:admin, @genre] do |f| %>
+<%= form_for [:admin, @genre],url: {controller: "genres", action: "create"} do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %>
