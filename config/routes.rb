@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   resources :directors, shallow: true do
     resources :movies
   end
-
-  resources :genres, only: [:index]
+  namespace :admin do
+    resources :genres, only: [:index]
+  end
 
   resources :movies, only: [:index]
   resources :users, only: [:show, :new, :create]

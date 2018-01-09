@@ -16,3 +16,5 @@ CSV.foreach("./data/movies.csv", headers: true) do |row|
                 director: director)
                 puts "Created #{movie.title}"
 end
+
+User.create(username: "admin", password: "admin", role: 1)
