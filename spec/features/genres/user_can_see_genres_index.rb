@@ -10,6 +10,7 @@ describe "When an Admin User navigates to genres index" do
   it "the Admin can see the index" do
     visit genres_path
 
+    expect(page).to have_field("genre[name]")
     expect(page).to have_button("Create Genre")
 
 

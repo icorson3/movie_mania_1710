@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :genre do
-    username "username"
-    password "password"
+    sequence(:name) {|n| "Name#{n}"}
   end
 end
