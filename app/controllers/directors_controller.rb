@@ -1,11 +1,9 @@
 class DirectorsController < ApplicationController
-
   def new
     @director = Director.new
   end
 
   def create
-
     director = Director.new(director_params)
     if director.save
       redirect_to "/directors/#{director.id}"

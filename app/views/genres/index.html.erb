@@ -1,6 +1,6 @@
 <% if current_admin? %>
   <h3>Create New Genre</h3>
-  <%= form_for @genre, :class => "genre-form" do |f| %>
+  <%= form_for @genre, url: admin_genres_path, :class => "genre-form" do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.submit "Submit" %>
