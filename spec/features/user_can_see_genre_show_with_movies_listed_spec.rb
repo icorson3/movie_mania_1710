@@ -17,8 +17,7 @@ describe "unregistered user visits genre index page" do
       expect(page).to have_content movie.title
       expect(page).to have_content movie2.title
 
-      expect(page).to have_content "Average Rating:"
-      expect(page).to have_content genre.average_rating
+      expect(page).to have_content "Average Rating: 4"
     end
   end
 end
