@@ -9,6 +9,7 @@ describe "As an unregistered user visiting the movie index" do
     @genre2 = create(:genre, name: "Sci-Fi")
     @genre3 = create(:genre, name: "Adventure")
     @movie_1.genres << [@genre1, @genre2, @genre3]
+
     visit movies_path
   end
 
@@ -25,12 +26,12 @@ describe "As an unregistered user visiting the movie index" do
       it "will have the genres for that movie and that movie's rating" do
         click_on "Guardians of the Galaxy"
 
-        expect(current_path).to eq movie_path(@movie_1)
+        expect(current_path).to eq movie_path(@movie_1.slug)
         expect(page).to have_content "Genres for this Movie:"
         expect(page).to have_content @genre1.name
         expect(page).to have_content @genre2.name
         expect(page).to have_content @genre3.name
-        expect(page).to have_content @movie_1.rating 
+        expect(page).to have_content @movie_1.rating
       end
     end
   end
