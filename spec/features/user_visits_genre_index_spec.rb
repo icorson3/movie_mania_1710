@@ -23,7 +23,7 @@ feature "user vitis genre index page" do
     visit genres_path
     genre1 = Genre.create(name: "Comedy")
     genre2 = Genre.create(name: "Thriller")
-    
+    save_and_open_page
     expect(page).to_not have_content("Create a genre")
     expect(page).to have_link("Comedy")
   end

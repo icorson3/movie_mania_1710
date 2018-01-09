@@ -18,7 +18,7 @@ describe "user sees one movie" do
     MovieGenre.create(movie_id: movie1.id, genre_id: genre2.id)
     MovieGenre.create(movie_id: movie1.id, genre_id: genre3.id)
 
-    visit movie_path(movie1)
+    visit movie_path(movie1.slug)
     
     
     expect(page).to have_content("Action")
