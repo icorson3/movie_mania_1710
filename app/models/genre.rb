@@ -5,5 +5,4 @@ class Genre < ApplicationRecord
   def average_rating
     movies.average(:rating)
   end
-
 end

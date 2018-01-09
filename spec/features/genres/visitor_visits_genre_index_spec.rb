@@ -10,8 +10,7 @@ describe "When a visitor navigates to the genre index" do
     MovieGenre.create(movie: @movie2, genre: @genre1)
 
   end
-
-
+  
   it "the visitor cannot see the new genre form" do
     visit genres_path
 

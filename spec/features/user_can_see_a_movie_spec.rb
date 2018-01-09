@@ -1,4 +1,4 @@
-genrequire "rails_helper"
+require "rails_helper"
 
 describe "user sees one movie" do
   it "has one title and description" do
