@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Genre.destroy_all
+
 
 require 'csv'
 
@@ -16,3 +18,5 @@ CSV.foreach("./data/movies.csv", headers: true) do |row|
                 director: director)
                 puts "Created #{movie.title}"
 end
+
+User.create(username: "admin", password: "admin", role: 1)
