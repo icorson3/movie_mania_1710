@@ -17,7 +17,7 @@ describe "admin visits genre index page" do
 
       expect(Genre.count). to eq(1)
     end
-    it "allows admin  see a genre it has created" do
+    it "allows admin see a genre it has created" do
       admin = User.create(username: "funbucket13",
                           password: "test",
                           role: 1)
@@ -29,8 +29,10 @@ describe "admin visits genre index page" do
       fill_in 'genre[name]', with: "comedy"
 
       click_button "Create Genre"
+
       expect(page).to have_content("Genre: comedy")
     end
+
     it " does not allow a normal user  see visit admin area " do
       user = User.create(username: "funbucket13",
                           password: "test",
@@ -42,7 +44,6 @@ describe "admin visits genre index page" do
 
       expect(page).to have_content("The page you were looking for doesn't exist.")
       expect(page).to_not have_content("Genre: comedy")
-
     end
   end
 end

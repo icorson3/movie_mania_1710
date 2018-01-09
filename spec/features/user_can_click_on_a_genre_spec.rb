@@ -21,7 +21,6 @@ describe "genre_index" do
     GenreMovie.create!(genre: @comedy, movie:@it)
 
     visit "/genres"
-    
   end
 
   it "user_can click on a genre from the genres index" do
@@ -31,46 +30,46 @@ describe "genre_index" do
   end
 
   it "can see the genres name" do
-        click_link ("action")
+    click_link ("action")
 
     expect(page).to have_content("action")
   end
 
-  it "user can see the movies  belonging to that genre" do
-        click_link ("action")
+  it "user can see the movies belonging to that genre" do
+    click_link ("action")
 
     expect(page).to have_content("Guardians of the Galaxy")
     expect(page).to have_content("Suicide Squad")
   end
 
   it "user can see the average rating of movies in that genre" do
-        click_link ("action")
+    click_link ("action")
 
     expect(page).to have_content(10)
   end
-    it "user_can click on a genre from the genres index" do
 
+  it "user_can click on a genre from the genres index" do
     click_link ("comedy")
 
     expect(current_path).to eq(genre_path(@comedy))
   end
 
-  it "can see the genres name" do
-        click_link ("comedy")
+    it "can see the genres name" do
+      click_link ("comedy")
 
-    expect(page).to have_content("comedy")
-  end
+      expect(page).to have_content("comedy")
+    end
 
-  it "user can see the movies  belonging to that genre" do
-        click_link ("comedy")
+    it "user can see the movies  belonging to that genre" do
+      click_link ("comedy")
 
-    expect(page).to have_content("Interstellar")
-    expect(page).to have_content("Parent Trap")
-  end
+      expect(page).to have_content("Interstellar")
+      expect(page).to have_content("Parent Trap")
+    end
 
-  it "user can see the average rating of movies in that genre" do
-        click_link ("comedy")
+    it "user can see the average rating of movies in that genre" do
+      click_link ("comedy")
 
-    expect(page).to have_content(6)
-  end
+      expect(page).to have_content(6)
+    end
 end
