@@ -28,6 +28,7 @@ describe "user sees genres with links" do
     expect(page).to have_content("Guardians of the Galaxy")
     expect(page).to have_content("Suicide Squad")
     expect(page).to have_content("Average Rating: 3")
+    save_and_open_page
     end
    end
   end

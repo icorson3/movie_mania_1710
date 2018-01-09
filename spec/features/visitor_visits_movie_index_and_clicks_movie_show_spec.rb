@@ -28,6 +28,7 @@ describe "user sees movies with links" do
     expect(page).to have_content "Action"
     expect(page).to have_content "Sci-Fi"
     expect(page).to have_content "#{movie_1.rating}"
+    save_and_open_page
    end
   end
 end

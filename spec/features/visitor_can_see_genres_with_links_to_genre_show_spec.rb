@@ -17,6 +17,7 @@ describe "user sees genres with links" do
 
     expect(page).to have_link(genre_1.name)
     expect(page).to have_link(genre_2.name)
+    save_and_open_page
    end
   end
 end
