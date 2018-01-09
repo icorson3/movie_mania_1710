@@ -9,7 +9,7 @@ describe "User visits genre index page" do
       expect(page).to have_content("Create New Genre")
 
       fill_in "genre[name]", with: "Sci-Fi"
-      click_on "Create Genre"
+      click_on "Submit"
 
       expect(current_path).to eq(genres_path)
       expect(page).to have_link("Sci-Fi")
