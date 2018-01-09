@@ -7,6 +7,7 @@ class Admin::GenresController < Admin::BaseController
 
   def create
     @genre = Genre.new(genre_params)
+    binding.pry
     if @genre.save
       flash[:notice] = "Genre #{@genre.name} sucessfully created!"
       redirect_to admin_genres_path
@@ -19,7 +20,7 @@ class Admin::GenresController < Admin::BaseController
   private
 
     def genre_params
-      params.permit(:genre).require(:name)
+      params.permit(params[:genre])
     end
 
 

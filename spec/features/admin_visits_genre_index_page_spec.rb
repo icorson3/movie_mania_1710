@@ -18,7 +18,7 @@ describe "admin visit the genre index page" do
       fill_in "genre[name]", with: "NewGenre"
       click_button 'Submit'
 
-      expect(current_path).to eq(genres_admin_path)
+      expect(current_path).to eq(admin_genres_path)
       within '.genre-list' do
         expect(page).to have_content("NewGenre")
       end
