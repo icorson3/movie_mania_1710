@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 describe Cart do
   subject { Cart.new({"1" => 2, "2" => 3}) }
 

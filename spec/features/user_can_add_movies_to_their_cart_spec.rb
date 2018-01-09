@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 feature "When a user adds a movie to their cart" do
   before(:each) do
     @movie = create(:movie)

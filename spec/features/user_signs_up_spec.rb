@@ -1,5 +1,3 @@
-require "rails_helper"
-
 describe "user signs up for account" do
   context "they visit the root page" do
     context "they click on registration link" do

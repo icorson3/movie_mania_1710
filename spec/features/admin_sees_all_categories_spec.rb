@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 describe "user visits categories index page" do
   context "as an admin" do
     it "allows admin to see all categories" do
