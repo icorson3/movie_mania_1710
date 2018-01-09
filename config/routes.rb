@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :movies, only: [:index, :show]
   resources :users, only: [:show, :new, :create]
-  resources :genres, only: [:show]
+  resources :genres, only: [:show, :index]
 
   namespace :admin do
     resources :categories, only: [:index]
