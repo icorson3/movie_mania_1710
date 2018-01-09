@@ -1,2 +1,11 @@
 <%= @movie.title %>
 <%= @movie.description %>
+Rating: <%= @movie.rating %>
+<div class="genres">
+  <h3>Genres for this Movie:</h3>
+  <ul>
+    <% @movie.genres.each do |genre| %>
+      <%= link_to genre.name, genre_path(genre) %>
+    <% end %>
+  </ul>
+</div>

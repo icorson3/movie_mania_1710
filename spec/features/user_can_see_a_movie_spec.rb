@@ -17,13 +17,12 @@ describe "user sees one movie" do
 
     visit movies_path
     click_on "Guardians of the Galaxy"
-    
-    within ("#genres") do
-      expect(page).to have_content("Genres:")
-      expect(page).to have_content("Action")
-      expect(page).to have_content("Adventure")
-      expect(page).to have_content("Sci Fi")
-    end
+
+    expect(page).to have_content("Genres for this Movie:")
+    expect(page).to have_link("Action")
+    expect(page).to have_link("Adventure")
+    expect(page).to have_link("Sci Fi")
+
   end
 
   it "has a rating" do
