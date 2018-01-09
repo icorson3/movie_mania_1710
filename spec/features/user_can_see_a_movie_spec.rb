@@ -8,7 +8,7 @@ describe "user sees one movie" do
     expect(page).to have_content(movie.title)
     expect(page).to have_content(movie.description)
   end
-  it "sees the genres associated with that movie " do 
+  it "as unregistered user, sees the genres associated with that movie " do 
     director = Director.create(name: "Steve")
     movie1 = director.movies.create(title: "Guardians of the  Galaxy", description: "people get lost", rating: 4)
     genre1 = Genre.create(name: "Action")
