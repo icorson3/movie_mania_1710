@@ -11,7 +11,7 @@ describe "When an Admin User navigates to genres index" do
     visit admin_genres_path
 
     # expect(page).to have_field("genre[]")
-    save_and_open_page
+    
     expect(page).to have_button("Create Genre")
 
 

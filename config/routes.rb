@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :movies
   end
   namespace :admin do
-    resources :genres, only: [:index]
+    resources :genres, only: [:index, :create]
   end
 
   resources :movies, only: [:index]
