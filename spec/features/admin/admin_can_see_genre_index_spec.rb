@@ -18,7 +18,7 @@ describe "As an admin user" do
       expect(current_path).to eq(admin_genres_path)
 
       expect(page).to have_content("Genre Index")
-      save_and_open_page
+
       expect(page).to have_content("SCIFI")
       expect(page).to have_content("SCARYMOVIE")
     end
