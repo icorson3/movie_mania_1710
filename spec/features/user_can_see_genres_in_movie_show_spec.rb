@@ -10,10 +10,18 @@ describe "unregistered user visits movie index page" do
   context "they click on a movie" do
       before(:each) do
         @movie = create(:movie)
+        @genre, @genre2 = create_list(:genre, 2)
+        @moviegenre = MovieGenre.create(genre: @genre, movie: @movie)
+        @moviegenre2 = MovieGenre.create(genre: @genre2, movie: @movie)
+
         visit movie_path(@movie)
       end
+
     it "sees movie page with genres for that movie" do
-
-      
-
+      expect(page).to have_content @movie.title
+      expect(page).to have_content "Genres for this Movie:"
+      expect(page).to have_content @genre.name
+      expect(page).to have_content @genre2.name
     end
+  end
+end
