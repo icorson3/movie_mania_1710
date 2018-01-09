@@ -2,7 +2,8 @@ class Admin::GenresController < Admin::BaseController
     # before_action :require_admin
 
     def index
-      @genre = Genre.all
+      @genres = Genre.all
+      @genre = Genre.new
     end
 
     def new
@@ -10,7 +11,7 @@ class Admin::GenresController < Admin::BaseController
     end
 
     def create
-      @genre = Genre.new(genre_params)
+      @genre = Genre.create!(genre_params)
       if @genre.save
         redirect_to admin_genres_path
       else
