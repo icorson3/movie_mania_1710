@@ -14,7 +14,6 @@ describe "user visits genre index page" do
       expect(page).to have_content("Genre name:")
       expect(page).to have_content("Admin Genre Form")
 
-      save_and_open_page
       fill_in "genre[name]", with: "Sci-Fi"
       fill_in "genre[name]", with: "Adventure"
 
