@@ -15,7 +15,7 @@ describe "unregistered user visits movie index page" do
       MovieGenre.create(movie: movie, genre: genre)
       MovieGenre.create(movie: movie, genre: genre2)
 
-      visit movie_path(movie)
+      visit movie_path(id: movie.slug)
 
       expect(page).to have_content movie.title
       expect(page).to have_content "Genres for this Movie:"
