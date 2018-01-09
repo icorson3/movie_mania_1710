@@ -4,6 +4,7 @@ class MoviesController < ApplicationController
   end
 
   def show
+    byebug
     @movie = Movie.find_by(slug: params[:id])
   end
 

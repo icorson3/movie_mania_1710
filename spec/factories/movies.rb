@@ -5,4 +5,10 @@ FactoryBot.define do
     description "Practically perfect in every way"
     director
   end
+
+  factory :guardians, class: Movie do
+    title "Guardians of the Galaxy"
+    description "Fun & funny action movie"
+    director
+  end
 end
