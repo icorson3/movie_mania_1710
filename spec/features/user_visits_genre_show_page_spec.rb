@@ -9,7 +9,9 @@ feature "user visits the genre show page" do
     MovieGenre.create(movie_id: movie1.id, genre_id: genre1.id)
     MovieGenre.create(movie_id: movie2.id, genre_id: genre1.id)
 
-    visit genre_path(genre1)
+    visit genres_path 
+    click_link("Action")
+
   
     expect(page).to have_content("Guardians of the Galaxy")
     expect(page).to have_content("Suicide Squad")
