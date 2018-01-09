@@ -5,6 +5,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find_by(slug: params[:id])
+    # binding.pry
   end
 
   def new
@@ -26,6 +27,6 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :description)
+    params.require(:movie).permit(:title, :description, :slug)
   end
 end

@@ -14,4 +14,25 @@ describe "user_index" do
     expect(page).to have_content(movie_2.title)
     expect(page).to have_content(movie_2.description)
   end
+
+  it "should show all genres belonging to that movie" do
+    user = create(:user)
+
+    movie_1 = create(:movie, rating: 4)
+    genre = Genre.create(name: "Action")
+    genre2 = Genre.create(name: "Adventure")
+    genre3 = Genre.create(name: "Sci-Fi")
+    mg = MovieGenre.create(movie: movie_1, genre: genre)
+    mg = MovieGenre.create(movie: movie_1, genre: genre2)
+    mg = MovieGenre.create(movie: movie_1, genre: genre3)
+    visit movies_path
+    # binding.pry
+    click_on "Mary P"
+    # save_and_open_page
+    expect(current_path).to eq(movie_path(movie_1.slug))
+    expect(page).to have_content("Action")
+    expect(page).to have_content("Adventure")
+    expect(page).to have_content("Sci-Fi")
+    expect(page).to have_content("Rating: 4")
+  end
 end
