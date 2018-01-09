@@ -16,7 +16,7 @@ describe "when and admin visits a genre index" do
   end
 
   describe "an unregistered user cannot create a new genre" do
-    xit "does not let them see the form" do
+    it "does not let them see the form" do
 
       user = create(:user)
       genre = Genre.create(name: "horror")
@@ -33,7 +33,7 @@ describe "when and admin visits a genre index" do
       expect(current_path).to eq(genre_path(genre))
     end
 
-    xit "should show a link to the genre show page with its associated movies" do
+    it "should show a link to the genre show page with its associated movies" do
       user = create(:user)
       genre = Genre.create(name: "horror")
       genre2 = Genre.create(name: "action")

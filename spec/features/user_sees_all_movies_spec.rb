@@ -16,8 +16,9 @@ describe "user_index" do
   end
 
   it "should show all genres belonging to that movie" do
-    user = user(:create)
-    movie_1 = create(:movie, director_id: director.id)
+    user = create(:user)
+
+    movie_1 = create(:movie, rating: 4)
     genre = Genre.create(name: "Action")
     genre2 = Genre.create(name: "Adventure")
     genre3 = Genre.create(name: "Sci-Fi")
@@ -25,9 +26,10 @@ describe "user_index" do
     mg = MovieGenre.create(movie: movie_1, genre: genre2)
     mg = MovieGenre.create(movie: movie_1, genre: genre3)
     visit movies_path
-    click_on "#{movie_1.name}"
-
-    expect(current_path).to eq(movie_path(movie_1))
+    # binding.pry
+    click_on "Mary P"
+    # save_and_open_page
+    expect(current_path).to eq(movie_path(movie_1.slug))
     expect(page).to have_content("Action")
     expect(page).to have_content("Adventure")
     expect(page).to have_content("Sci-Fi")
