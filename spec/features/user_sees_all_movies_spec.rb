@@ -15,7 +15,7 @@ describe "user_index" do
     expect(page).to have_content(movie_2.description)
   end
 
-  xit "should show all genres belonging to that movie" do
+  it "should show all genres belonging to that movie" do
     user = user(:create)
     movie_1 = create(:movie, director_id: director.id)
     genre = Genre.create(name: "Action")
