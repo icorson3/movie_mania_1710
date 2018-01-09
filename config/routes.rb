@@ -9,10 +9,13 @@ Rails.application.routes.draw do
     resources :movies
   end
   namespace :admin do
-    resources :genres, only: [:index, :create]
+    resources :genres, only: [:index]
+    post "/genres", to: "genres#create"
   end
 
-  resources :genres, only: [:index, :create, :show]
+
+
+  resources :genres, only: [:index, :show]
 
   resources :movies, only: [:index]
   resources :users, only: [:show, :new, :create]
