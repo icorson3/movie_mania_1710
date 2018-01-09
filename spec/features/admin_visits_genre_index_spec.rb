@@ -26,8 +26,8 @@ describe "when and admin visits a genre index" do
 
       expect(page).to have_content("All Genres")
       expect(page).to have_no_content("Create a new genre")
-      expect(page).to have_no_content(genre.name)
-      expect(page).to have_no_content(genre2.name)
+      expect(page).to have_content(genre.name)
+      expect(page).to have_content(genre2.name)
       click_on "#{genre.name}"
 
       expect(current_path).to eq(genre_path(genre))
@@ -47,8 +47,8 @@ describe "when and admin visits a genre index" do
       click_on "action"
 
       expect(current_path).to eq(genre_path(genre2))
-      expect(page).to have_content(movie_1.title)
-      expect(page).to have_content(movie_2.title)
+      expect(page).to have_content("Guardians of the Galaxy")
+      expect(page).to have_content("Suicide Squad")
 
       expect(page).to have_content("Average Rating: 3")
     end
