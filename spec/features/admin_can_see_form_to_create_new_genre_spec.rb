@@ -20,6 +20,14 @@ describe "admin visits genre index page" do
 
         expect(current_path).to eq("/admin/genres")
         expect(page).to have_content("Action")
+
+
+        fill_in "genre[name]", with: "Adventure"
+        click_on "Create Genre"
+
+        expect(page).to have_content("Action")
+        expect(page).to have_content("Adventure")
+
       end
     end
   end

@@ -5,10 +5,6 @@ class Admin::GenresController < Admin::BaseController
       @genres = Genre.all
     end
 
-    # def new
-    #   @genre = Genre.new
-    # end
-
     def create
       genre = Genre.new(genre_params)
       if genre.save
