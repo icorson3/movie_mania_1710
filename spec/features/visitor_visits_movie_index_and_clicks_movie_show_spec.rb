@@ -14,7 +14,7 @@ describe "user sees movies with links" do
     genre_2 = Genre.create(name: "Action")
     genre_3 = Genre.create(name: "Sci-Fi")
     director = create(:director)
-    movie_1 = Movie.create(title: "Guardians of the Galaxy", description: "great", director_id: director.id, rating: 1 )
+    movie_1 = Movie.create(title: "Guardians of the Galaxy", description: "great", director_id: director.id, rating: 1, slug: movie_1 )
     movie_genre = MovieGenre.create(movie_id: movie_1.id, genre_id: genre_1.id)
     movie_genre = MovieGenre.create(movie_id: movie_1.id, genre_id: genre_2.id)
     movie_genre = MovieGenre.create(movie_id: movie_1.id, genre_id: genre_3.id)
