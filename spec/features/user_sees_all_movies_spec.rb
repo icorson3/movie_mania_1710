@@ -1,5 +1,3 @@
-
-
 describe "user_index" do
   it "user_can_see_all_movies" do
 
