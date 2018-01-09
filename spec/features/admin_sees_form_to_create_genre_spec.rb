@@ -11,7 +11,7 @@ describe "user visits genre index page" do
 
       visit admin_genres_path
 
-      expect(page).to have_content("Cart: 0")
+      expect(page).to have_content("Genre name:")
       expect(page).to have_content("Admin Genre Form")
     end
   end
