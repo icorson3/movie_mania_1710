@@ -11,7 +11,6 @@ describe "When an visitor visits movies index" do
     mg3 = MovieGenre.create(movie: @movie, genre: genre3)
   end
 
-
   it "the visitor can navigate to a movie show page" do
     visit movies_path
 
@@ -23,6 +22,5 @@ describe "When an visitor visits movies index" do
     expect(page).to have_content("Sci-Fi")
     expect(page).to have_content("Adventure")
     expect(page).to have_content("Rating: 5")
-
   end
 end

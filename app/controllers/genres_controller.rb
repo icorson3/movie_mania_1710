@@ -16,6 +16,10 @@ class GenresController < ApplicationController
       flash[:failure] = " Error"
     end
   end
+
+  def show
+    @genre = Genre.find(params[:id])
+  end
   private
 
     def genre_params

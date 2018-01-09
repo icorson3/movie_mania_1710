@@ -1,0 +1,8 @@
+<h1><%= @genre.name %></h1>
+
+<p>Movies in this genre:</p>
+<% @genre.movies.each do |movie| %>
+  <%= movie.title %>
+<% end %>
+
+<p>Average Rating: <%= @genre.average_rating  %></p>
