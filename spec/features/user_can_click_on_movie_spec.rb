@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "user_index" do
+describe "movies index" do
   before(:each) do
     director = create(:director)
     @gog = director.movies.create(title:"Guardians of the Galaxy", rating: 5)
@@ -28,5 +28,11 @@ describe "user_index" do
     expect(page).to have_content("action")
     expect(page).to have_content("scifi")
     expect(page).to have_content("adventure")
+  end
+
+  it "user_can see the genres belonging to that movie" do
+    visit "/movies"
+    click_link ("Guardians of the Galaxy")
+    expect(page).to have_content("5")
   end
 end
