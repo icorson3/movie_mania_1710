@@ -4,7 +4,11 @@ class Movie < ApplicationRecord
   belongs_to :director
 
   has_many :genre_movies
-  has_many :genres, through: :genre_movies 
+  has_many :genres, through: :genre_movies
+
+  def self.avg_rating
+    average(:rating)
+  end
 
   private
 
