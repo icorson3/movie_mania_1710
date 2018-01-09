@@ -4,7 +4,14 @@ describe "As an unregistered user" do
   describe "When I visit the genre index" do
     before(:each) do
       @user = create(:user)
-      @genre1, @genre2 = create_list(:genre, 2)
+      @movie_1 = create(:movie, title: "Guardians of the Galaxy")
+      @movie_2 = create(:movie, title: "Suicide Squad")
+      @genre1 = create(:genre, name: "Action")
+      @genre2 = create(:genre, name: "Sci-Fi")
+      @genre3 = create(:genre, name: "Adventure")
+      @movie_1.genres << [@genre1, @genre2, @genre3]
+      @movie_2.genres << @genre1
+
       visit genres_path
     end
 
