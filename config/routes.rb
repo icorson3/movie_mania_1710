@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create]
 
   namespace :admin do
+    resources :genres, only: [:index, :create]
     resources :categories, only: [:index]
   end
 
