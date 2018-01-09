@@ -8,17 +8,15 @@ describe "When an Admin User navigates to genres index" do
   end
 
   it "the Admin can see the index" do
-    visit admin_genres_path
+    visit genres_path
 
-    # expect(page).to have_field("genre[]")
-    
     expect(page).to have_button("Create Genre")
 
 
     fill_in "genre[name]", with: "Sci-Fi"
     click_button "Create Genre"
 
-    expect(current_path).to eq(admin_genres_path)
+    expect(current_path).to eq(genres_path)
     expect(page).to have_content("Sci-Fi")
   end
 
