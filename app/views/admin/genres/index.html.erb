@@ -1,0 +1,18 @@
+<h2>All Genres:</h2>
+
+<div class="genre-list">
+  <% @genres.each do |genre| %>
+    <%= genre.name %>
+  <% end %>
+</div>
+
+<h3>Create A New Genre:</h3>
+
+<%= form_for [:admin, @genre],url: {controller: "genres", action: "create"} do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit "Submit" %>
+
+<% end %>
