@@ -26,7 +26,7 @@ describe "a user visits the movie index page" do
 
         click_link "#{movie.title}"
 
-        expect(current_path).to eq(movie_path(movie))
+        expect(current_path).to eq(movie_path(movie.slug))
 
         expect(page).to have_content("#{movie.title}")
         expect(page).to_not have_content("#{movie2.title}")
