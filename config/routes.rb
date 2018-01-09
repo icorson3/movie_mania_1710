@@ -9,11 +9,14 @@ Rails.application.routes.draw do
     resources :movies
   end
 
+  resources :genres, only: [:index, :show]
+
   resources :movies, only: [:index]
   resources :users, only: [:show, :new, :create]
 
   namespace :admin do
     resources :categories, only: [:index]
+    resources :genres, only: [:index, :create]
   end
 
   resources :carts, only: [:create]
