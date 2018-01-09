@@ -13,10 +13,10 @@ describe "user visits genre index page" do
       visit admin_genres_path
 
       expect(page).to have_content("Genres") 
-      expect(page).to have_button("submit")
 
-      fill_in "genre[title]", with: "Comedy"
-      click_on "submit"
+      fill_in "genre[name]", with: "Comedy"
+      save_and_open_page
+      click_on "Create Genre"
 
       genre = Genre.last
       expect(current_path).to eq("/admin/genres") 
