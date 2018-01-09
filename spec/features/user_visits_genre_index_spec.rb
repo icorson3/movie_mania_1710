@@ -2,9 +2,6 @@ require 'rails_helper'
 
 
 feature "user vitis genre index page" do 
-  before  do 
-   
-  end
   scenario "as an admin they see a form to create  a genre, after completing it they see the genre " do 
 
      admin = User.create(username: "funbucket13",
@@ -22,17 +19,27 @@ feature "user vitis genre index page" do
     expect(page).to have_content("Comedy")
   end
 
-  scenario "as an unregistered user they do not see the form to create a new genre " do 
+  scenario "as an unregistered user they see no form to create a genre, but see links of the genres " do 
     visit genres_path
     genre1 = Genre.create(name: "Comedy")
     genre2 = Genre.create(name: "Thriller")
 
     expect(page).to_not have_content("Create a genre")
-
+    expect(page).to have_link("Comedy")
   end
+
+  
 
 
 end
+
+
+# As an unregistered user, 
+# When I visit the movie index,
+# And I click on "Guardians of the Galaxy"
+# I see a page with "Guardians of the Galaxy", 
+# I also see "Action", "Adventure", "Sci-Fi" under a "Genres for this Movie:" heading
+# I also see the rating for this movie (rating should be an attribute of a movie).
 
 
 # As an unregistered user,
@@ -40,9 +47,6 @@ end
 # I cannot see the form to create new genres, 
 # I see all genres (for testing purposes, I should see at least 2) 
 # and each genre should be a link to that genre's specific page
-
-
-
 
 
 
