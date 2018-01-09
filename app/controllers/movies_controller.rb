@@ -15,7 +15,6 @@ class MoviesController < ApplicationController
   def create
     director = Director.find(params[:director_id])
     movie = director.movies.new(movie_params)
-
     if movie.save
       redirect_to "/movies/#{movie.slug}"
     else
