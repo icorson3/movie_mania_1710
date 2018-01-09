@@ -15,7 +15,6 @@ describe "user visits genre index page" do
       expect(page).to have_content("Genres") 
 
       fill_in "genre[name]", with: "Comedy"
-      save_and_open_page
       click_on "Create Genre"
 
       genre = Genre.last

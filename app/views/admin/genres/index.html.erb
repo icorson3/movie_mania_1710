@@ -1,7 +1,13 @@
 Genres
 
+
 <%= form_for [:admin, @genre] do |f| %>
   <%= f.label :name, "Fill in name!" %>
   <%= f.text_field :name %>
   <%= f.submit %>
+<% end %>
+
+
+<% @genres.each do |genre| %>
+<%= genre.name %>
 <% end %>
