@@ -1,0 +1,10 @@
+<h2>All Current Genres</h2>
+<% @genres.each do |genre| %>
+  <li><%= genre.name %></li>
+<% end  %>
+
+<%= form_for [:admin, @genre] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "Submit" %>
+<% end %>

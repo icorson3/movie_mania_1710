@@ -13,8 +13,11 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create]
 
   namespace :admin do
+    resources :genres, only: [:index, :create]
     resources :categories, only: [:index]
   end
+
+  resources :genres, only: [:index, :show]
 
   resources :carts, only: [:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
