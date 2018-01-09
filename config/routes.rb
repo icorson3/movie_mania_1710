@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create]
   end
 
-  resources :genres, only: [:index, :create]
+  resources :genres, only: [:index, :create, :show]
 
   resources :movies, only: [:index]
   resources :users, only: [:show, :new, :create]
