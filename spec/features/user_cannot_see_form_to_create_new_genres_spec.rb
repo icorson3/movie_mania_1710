@@ -20,10 +20,10 @@ describe "unregistered user visits genre index page" do
     genre1 = create(:genre)
     genre2 = create(:genre)
 
-    visit genres_index
+    visit genres_path
 
     expect(page).to have_content(genre1.name)
-    expect(page).to have_button(genre2.name)
+    expect(page).to have_content(genre2.name)
     expect(page).to have_link(genre1.name)
     expect(page).to have_link(genre2.name)
   end
