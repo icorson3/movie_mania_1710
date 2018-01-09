@@ -4,4 +4,7 @@ class Genre < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
+  def average_rating
+    movies.average(:rating)
+  end
 end
