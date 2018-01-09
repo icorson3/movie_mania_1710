@@ -3,6 +3,11 @@ require 'rails_helper'
 
 feature "admin vitis genre index page" do 
   before  do 
+     admin = User.create(username: "funbucket13",
+                          password: "test",
+                          role: 1)
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
     visit admin_genres_path
   end
   scenario "sees a form to create a new genre " do 
@@ -10,7 +15,7 @@ feature "admin vitis genre index page" do
     fill_in "genre[name]", with: "Comedy"
     click_on "Create Genre"
 
-    expdct(page).to have_content("Comedy")
+    expect(page).to have_content("Comedy")
   end
 end
 
