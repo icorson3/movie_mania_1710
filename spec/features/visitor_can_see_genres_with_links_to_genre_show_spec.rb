@@ -8,16 +8,14 @@ require "rails_helper"
 describe "user sees genres with links" do
   context "unregistered user visits genre page" do 
     it "sees genre links" do
+      
     genre_1 = Genre.create(name: "comedy")
     genre_2 = Genre.create(name: "action")
 
     visit genres_path
 
-    save_and_open_page
-
     expect(page).to have_link(genre_1.name)
     expect(page).to have_link(genre_2.name)
-    save_and_open_page
    end
   end
 end

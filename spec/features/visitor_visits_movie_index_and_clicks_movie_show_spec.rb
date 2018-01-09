@@ -10,6 +10,7 @@ require "rails_helper"
 describe "user sees movies with links" do
   context "unregistered user visits movie index page" do 
     it "sees movie links" do
+      
     genre_1 = Genre.create(name: "Adventure")
     genre_2 = Genre.create(name: "Action")
     genre_3 = Genre.create(name: "Sci-Fi")
@@ -28,7 +29,6 @@ describe "user sees movies with links" do
     expect(page).to have_content "Action"
     expect(page).to have_content "Sci-Fi"
     expect(page).to have_content "#{movie_1.rating}"
-    save_and_open_page
    end
   end
 end
