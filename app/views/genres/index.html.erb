@@ -1,0 +1,13 @@
+<h1>All Genres</h1>
+
+<% @genres.each do |genre| %>
+  <p><%= link_to genre.name, genre_path(genre) %></p><br>
+<% end %>
+
+<% if current_admin? %>
+  <%= form_for @genre do |f| %>
+    <%= render "shared/errors", object: @genre %>
+    <%= f.text_field :field %>
+
+  <% end %>
+<% end %>
