@@ -6,8 +6,10 @@
 
 <% if current_admin? %>
   <%= form_for @genre do |f| %>
-    <%= render "shared/errors", object: @genre %>
-    <%= f.text_field :field %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.submit %>
 
   <% end %>
 <% end %>
