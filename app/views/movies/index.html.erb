@@ -2,7 +2,7 @@
   <h1>All Movies</h1>
 
   <% @movies.each do |movie| %>
-    <h2><%= movie.title %></h2>
+    <%= link_to "#{movie.title}", movie_path(movie.slug) %>
     <p><%= movie.description %></p>
     <%= button_to "Add Movie", carts_path(movie_id: movie.id), class: 'cart-button' %>
   <% end %>
