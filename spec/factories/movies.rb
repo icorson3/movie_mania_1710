@@ -4,5 +4,7 @@ FactoryBot.define do
     title "Mary P"
     description "Practically perfect in every way"
     director
+    genre
+    rating 5
   end
 end
