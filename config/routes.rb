@@ -9,8 +9,9 @@ Rails.application.routes.draw do
     resources :movies
   end
 
-  resources :movies, only: [:index]
+  resources :movies, only: [:index, :show]
   resources :users, only: [:show, :new, :create]
+  resources :genres, only: [:show]
 
   namespace :admin do
     resources :categories, only: [:index]

@@ -20,7 +20,7 @@ describe "user visits genre index page" do
 
       expect(current_path).to eq(admin_genres_path)
       # save_and_open_page
-      expect(page).to have_content("Sci-Fi")
+      expect(page).to have_content("Genre List:")
       expect(page).to have_content("Adventure")
     end
   end
