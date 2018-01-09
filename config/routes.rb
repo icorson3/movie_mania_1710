@@ -14,12 +14,15 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :categories, only: [:index]
-    resources :genres, only: [:index, :create]
+    resources :genres, only: [:index, :create,:show]
 
   end
-
-
-  get 'genres', to: "genres#index" 
+  
+    resources :genres, only: [:index,:show]
+  #
+  #
+  # get 'genres', to: "genres#index" ,as: "genres"
+  # get 'genre', to: "genres#show" ,as: "genre"
 
   resources :carts, only: [:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
