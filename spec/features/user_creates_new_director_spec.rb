@@ -1,4 +1,4 @@
-require "rails_helper"
+
 
 describe "user visits new director page" do
   context "they fill out a form with name" do

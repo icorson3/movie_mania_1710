@@ -1,6 +1,5 @@
-describe Genre do
-  it {should have_many :genre_movies}
-  it {should have_many :movies}
+describe Genre, type: :model do
+  it {should have_many(:movies).through(:genre_movies)}
 
   describe "validations" do
     it "must have a name" do

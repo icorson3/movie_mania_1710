@@ -1,4 +1,4 @@
-describe Movie do
-  it {should have_many :genre_movies}
-  it {should have_many :genres}
+describe Movie, type: :model do
+  it {should have_many(:genres).through(:genre_movies)}
+  it {should belong_to :director}
 end
