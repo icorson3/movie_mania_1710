@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 describe User do
   it "can be created as an admin" do
     user = create(:user, role: 1)

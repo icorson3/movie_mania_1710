@@ -1,0 +1,14 @@
+<% if current_admin? %>
+  <h3>Create New Genre</h3>
+  <%= form_for @genre, :class => "genre-form" do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit "Submit" %>
+  <% end %>
+<% end %>
+
+<ul>
+<% @genres.each do |genre| %>
+  <li><%= link_to genre.name, genre_path(genre) %></li>
+<% end %>
+</ul>

@@ -4,9 +4,7 @@ FactoryBot.define do
     sequence(:name) {|n| "Director#{n}"}
   end
 
-  factory :admin, class: :director do
-    sequence(:name) {|n| "Director#{n}"}
-  end
+
 
   factory :director_with_movies, class: :director do
     name "My name"

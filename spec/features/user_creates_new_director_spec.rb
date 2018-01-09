@@ -1,5 +1,3 @@
-require "rails_helper"
-
 describe "user visits new director page" do
   context "they fill out a form with name" do
     it "creates a new director and redirects to director show" do
