@@ -13,6 +13,7 @@ describe "As an admin, when I visit the genre index" do
 
       expect(current_path).to eq admin_genres_path
       expect(page).to have_content "Action"
+      save_and_open_page
     end
   end
 end
