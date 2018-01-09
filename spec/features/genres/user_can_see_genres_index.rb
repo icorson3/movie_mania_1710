@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "When an Admin User navigates to genres index" do
   before :each do
     admin = create(:user, role: 1)
-    @movie = create(:movie)
+
 
 
   end
