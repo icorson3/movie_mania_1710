@@ -18,6 +18,8 @@ describe "As an unregistered user" do
     it "cannot see the form to create new genres" do
       expect(page).to_not have_content "Submit"
       expect(page).to_not have_content "Name:"
+
+      #can you test for non-existence of a form field??
       # expect(find_field("genre[name]")).to eq false
     end
 

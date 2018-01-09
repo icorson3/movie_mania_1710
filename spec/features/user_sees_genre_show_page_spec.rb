@@ -27,7 +27,7 @@ describe "As an unregistered user when I visit the genre index" do
     end
 
     it "shows the average rating for movies in this genre" do
-      expect(page).to have_content "Average Rating of Movies: 75"
+      expect(page).to have_content "Average Rating of Movies: #{@genre1.average_movie_rating}"
     end
   end
 end
