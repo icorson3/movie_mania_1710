@@ -11,10 +11,10 @@ describe "an admin visits the genre index page" do
 
         visit genres_path
 
-        expect(page).to have_field(:name)
+        expect(page).to have_field("genre[name]")
 
         fill_in "genre[name]", with: "Action"
-        click_button "Submit"
+        click_button "Create Genre"
 
         expect(current_path).to eq(genres_path)
 
