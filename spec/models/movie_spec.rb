@@ -6,7 +6,7 @@ describe Movie, type: :model do
   end
 
   describe "relationships" do
-    it {should have_many(:genres)}
+    it {should have_many(:genres).through(:genre_movies)}
     it {should belong_to(:director)}
     it {should have_many(:genre_movies)}
   end
