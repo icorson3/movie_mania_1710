@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     resources :genres 
   end
 
+  resources :genres, only: [:index]
+
   resources :carts, only: [:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
