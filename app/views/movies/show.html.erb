@@ -1,2 +1,9 @@
 <%= @movie.title %>
 <%= @movie.description %>
+<div id="genre-heading">
+  Genres for this Movie: <br>
+  <% @movie.genres.each do |genre| %>
+  <%= genre.name %><br>
+  <% end %>
+</div>
+<%= @movie.rating %>
