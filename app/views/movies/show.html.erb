@@ -3,5 +3,5 @@
 
 <% @movie.genres.each do |genre| %>
   <%= genre.name %>
-  Averge Rating: <%= genre.movies.average(:rating).to_i %>
+  Averge Rating: <%= genre.average_movie_rating %>
 <% end %>

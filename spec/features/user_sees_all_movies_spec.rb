@@ -26,9 +26,9 @@ describe "user_index" do
     mg = MovieGenre.create(movie: movie_1, genre: genre2)
     mg = MovieGenre.create(movie: movie_1, genre: genre3)
     visit movies_path
-    # binding.pry
+
     click_on "Mary P"
-    # save_and_open_page
+
     expect(current_path).to eq(movie_path(movie_1.slug))
     expect(page).to have_content("Action")
     expect(page).to have_content("Adventure")
