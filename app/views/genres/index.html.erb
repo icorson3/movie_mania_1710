@@ -6,7 +6,7 @@
 
 <% if current_user.admin? %>
   <p>Create a new genre</p>
-   <%= form_for @genre do |f| %>
+   <%= form_for [:admin, @genre] do |f| %>
      <%= f.label :name %>
      <%= f.text_field :name %>
      <%= f.submit %>
