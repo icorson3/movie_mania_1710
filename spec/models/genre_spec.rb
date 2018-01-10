@@ -14,7 +14,7 @@ describe Genre, type: :model do
     end
 
     context "invalid attributes" do
-      it "is invalid with name" do
+      it "is invalid without name" do
         genre = Genre.create
         expect(genre).to be_invalid
       end

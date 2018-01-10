@@ -5,12 +5,11 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find_by(slug: params[:id])
-    # binding.pry
   end
 
   def new
     @director = Director.find(params[:director_id])
-    @movie = Movie.new
+    @movie = Movie.new()
   end
 
   def create
