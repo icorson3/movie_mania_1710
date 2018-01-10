@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
 
   def new
     @director = Director.find(params[:director_id])
-    @movie = Movie.new
+    @movie = Movie.new()
   end
 
   def create
@@ -26,6 +26,6 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :description)
+    params.require(:movie).permit(:title, :description, :slug)
   end
 end
