@@ -6,10 +6,6 @@ class Movie < ApplicationRecord
   has_many :genre_movies
   has_many :genres, through: :genre_movies
 
-  # def self.avg_rating
-  #   average(:rating)
-  # end
-
   private
 
     def generate_slug
