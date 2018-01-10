@@ -28,8 +28,8 @@ describe "As a visitor" do
 
       expect(page).to have_content("#{@movie.title}")
       expect(page).to have_content("#{@movie_2.title}")
-      
-      expect(page).to have_content("Average Rating for Movies: #{Movie.avg_rating}")
+
+      expect(page).to have_content("Average Rating for Movies: #{@genre_1.avg_rating}")
     end
   end
 end
