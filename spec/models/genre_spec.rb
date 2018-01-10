@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Genre do 
-  context "validations" do 
+  context "associations" do 
     it {should have_many :movies}
     it {should have_many :movie_genres}
   end
