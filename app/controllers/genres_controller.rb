@@ -5,9 +5,6 @@ class GenresController < ApplicationController
     @genre = Genre.new()
   end
 
-  def new
-  end
-
   def show
     @genre = Genre.find(params[:id])
   end
