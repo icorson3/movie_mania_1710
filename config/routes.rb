@@ -14,7 +14,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :categories, only: [:index]
+    resources :genres 
   end
+
+  resources :genres, only: [:index, :show]
 
   resources :carts, only: [:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
